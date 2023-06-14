@@ -191,6 +191,7 @@ For more details on how to use the code and customize it for your own machine tr
 
 
 # Attention Is All You Need Research Paper Implementation
+[colab](https://colab.research.google.com/github/coderhetal/NLP/blob/main/Attention_Is_All_You_Need.ipynb)
 
 This repository contains an implementation of the "Attention Is All You Need" paper, which introduces the Transformer model for sequence-to-sequence tasks. The Transformer model has gained significant popularity in natural language processing tasks such as machine translation, text generation, and language understanding.
 
