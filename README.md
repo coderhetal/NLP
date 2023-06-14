@@ -3,7 +3,13 @@
 - ## [Sequence-to-Sequence Learning Using Neural Networks](https://github.com/coderhetal/NLP/edit/main/README.md#sequence-to-sequence-learning-using-neural-networks-1)
 - ## [Neural Machine Translation by Jointly Learning to Align and Translate](https://github.com/coderhetal/NLP/edit/main/README.md#neural-machine-translation-by-jointly-learning-to-align-and-translate-1)
 - ## [ATTENTION IS ALL U NEED]()
-# CBOW IMPLEMENTATION 
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+
+# 1. CBOW IMPLEMENTATION 
 
 This repository contains an implementation of the Continuous Bag-of-Words (CBOW) algorithm using PyTorch. CBOW is a popular algorithm for training word embeddings, which are continuous vector representations of words.
 
@@ -51,7 +57,7 @@ The CBOW implementation follows the following steps:
 
 
 
-# Sequence-to-Sequence Learning Using Neural Networks
+# 2. Sequence-to-Sequence Learning Using Neural Networks
 
 This repository contains an implementation of the Sequence-to-Sequence (Seq2Seq) model for sequence learning using neural networks. The Seq2Seq model has gained significant popularity in natural language processing tasks such as machine translation, text summarization, and dialogue generation.
 
@@ -117,7 +123,7 @@ Here, the encoder and decoder components are instantiated with an embedding laye
 --------------------------------------------------------------------------------------------------------------------
 
 
-# Neural Machine Translation by Jointly Learning to Align and Translate
+# 3. Neural Machine Translation by Jointly Learning to Align and Translate
 
 This repository contains an implementation of the Neural Machine Translation (NMT) model presented in the paper "Neural Machine Translation by Jointly Learning to Align and Translate" by Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. The NMT model introduced in this paper revolutionized the field of machine translation by using attention mechanisms to improve translation quality.
 
