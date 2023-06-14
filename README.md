@@ -2,7 +2,7 @@
 - ## [CBOW IMPLEMENTATION](https://github.com/coderhetal/NLP/edit/main/README.md#cbow-implementation-1)
 - ## [Sequence-to-Sequence Learning Using Neural Networks](https://github.com/coderhetal/NLP/edit/main/README.md#sequence-to-sequence-learning-using-neural-networks-1)
 - ## [Neural Machine Translation by Jointly Learning to Align and Translate](https://github.com/coderhetal/NLP/edit/main/README.md#neural-machine-translation-by-jointly-learning-to-align-and-translate-1)
-- ## [ATTENTION IS ALL U NEED]()
+- ## [ATTENTION IS ALL U NEED](https://github.com/coderhetal/NLP/edit/main/README.md#attention-is-all-you-need-research-paper-implementation)
 
 
 
@@ -186,4 +186,110 @@ Seq2Seq(
 5. **Inference**: After training, you can use the trained NMT model to translate new source sentences into target sentences. The implementation provides functions for both single sentence and batch inference. The attention mechanism allows the model to focus on relevant parts of the source sentence during translation.
 
 For more details on how to use the code and customize it for your own machine translation tasks, please refer to the documentation and comments in the source code files.
+
+-----------------------------------------------------------------------------------------------
+
+
+# Attention Is All You Need Research Paper Implementation
+
+This repository contains an implementation of the "Attention Is All You Need" paper, which introduces the Transformer model for sequence-to-sequence tasks. The Transformer model has gained significant popularity in natural language processing tasks such as machine translation, text generation, and language understanding.
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Dependencies](#dependencies)
+- [Overview](#overview)
+
+
+## Introduction
+The "Attention Is All You Need" paper presents a novel architecture called the Transformer, which replaces recurrent neural networks (RNNs) with self-attention mechanisms to capture dependencies between words in a sequence. The Transformer model achieves state-of-the-art performance on machine translation tasks and demonstrates the effectiveness of self-attention for modeling long-range dependencies.
+
+This repository provides an implementation of the Transformer model using PyTorch, a popular deep learning framework. The code is based on the architectural details and specifications provided in the original paper.
+
+
+## Dependencies
+The implementation relies on the following dependencies:
+
+- Python (>= 3.6)
+- PyTorch (>= 1.9.0)
+- NumPy (>= 1.21.0)
+- matplotlib (>= 3.4.3)
+- torchtext (>= 0.10.0)
+
+
+## Overview
+The Transformer implementation follows these steps:
+
+1. **Data Preparation**: The provided code includes functionality to preprocess the data for training the Transformer model. The "multi30k" dataset is used as an example. You can customize this part according to your specific task and dataset. The preprocessing may involve tokenization, numerical encoding, and data splitting.
+
+2. **Model Architecture**: The Transformer model architecture is implemented according to the paper's specifications. It consists of an encoder and a decoder, both of which can be customized to suit your needs. The encoder and decoder consist of multiple layers, each containing self-attention mechanisms and feed-forward neural networks.
+
+The example code includes the following model architecture:
+
+Seq2Seq(
+  (encoder): Encoder(
+    (tok_embedding): Embedding(7853, 256)
+    (pos_embedding): Embedding(100, 256)
+    (enc_layers): ModuleList(
+      (0-2): 3 x Encoder_Layer(
+        (self_attn): MultiHead_Attn_Layer(
+          (fc_Q): Linear(in_features=256, out_features=256, bias=True)
+          (fc_K): Linear(in_features=256, out_features=256, bias=True)
+          (fc_V): Linear(in_features=256, out_features=256, bias=True)
+          (fc_O): Linear(in_features=256, out_features=256, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pff): Postn_Feed_Fwrd(
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (attn_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (pff_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (dropout): Dropout(p=0.1, inplace=False)
+  )
+ (decoder): Decoder(
+    (tok_embedding): Embedding(5893, 256)
+    (pos_embedding): Embedding(100, 256)
+    (dec_layers): ModuleList(
+      (0-2): 3 x Decoder_Layer(
+        (self_attn): MultiHead_Attn_Layer(
+          (fc_Q): Linear(in_features=256, out_features=256, bias=True)
+          (fc_K): Linear(in_features=256, out_features=256, bias=True)
+          (fc_V): Linear(in_features=256, out_features=256, bias=True)
+          (fc_O): Linear(in_features=256, out_features=256, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (cross_attn): MultiHead_Attn_Layer(
+          (fc_Q): Linear(in_features=256, out_features=256, bias=True)
+          (fc_K): Linear(in_features=256, out_features=256, bias=True)
+          (fc_V): Linear(in_features=256, out_features=256, bias=True)
+          (fc_O): Linear(in_features=256, out_features=256, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (pff): Postn_Feed_Fwrd(
+          (fc1): Linear(in_features=256, out_features=512, bias=True)
+          (fc2): Linear(in_features=512, out_features=256, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (attn_norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (attn_norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (pff_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (fc): Linear(in_features=256, out_features=5893, bias=True)
+    (dropout): Dropout(p=0.1, inplace=False)
+  )
+)
+
+
+
+3. **Training**: The code includes functionality to train the Transformer model using the provided dataset. You can modify the training parameters, such as batch size, learning rate, and number of epochs, to optimize the model's performance.
+
+4. **Evaluation**: After training, you can evaluate the trained model's performance using appropriate evaluation metrics, such as BLEU score, accuracy, or perplexity. The code includes functions to calculate these metrics.
+
+
 
