@@ -1,3 +1,8 @@
+# Table of Contents
+- ## [CBOW IMPLEMENTATION](https://github.com/coderhetal/NLP/edit/main/README.md#cbow-implementation-1)
+- ## [Sequence-to-Sequence Learning Using Neural Networks](https://github.com/coderhetal/NLP/edit/main/README.md#sequence-to-sequence-learning-using-neural-networks-1)
+- ## [Neural Machine Translation by Jointly Learning to Align and Translate](https://github.com/coderhetal/NLP/edit/main/README.md#neural-machine-translation-by-jointly-learning-to-align-and-translate-1)
+- ## [ATTENTION IS ALL U NEED]()
 # CBOW IMPLEMENTATION 
 
 This repository contains an implementation of the Continuous Bag-of-Words (CBOW) algorithm using PyTorch. CBOW is a popular algorithm for training word embeddings, which are continuous vector representations of words.
@@ -79,9 +84,8 @@ The Seq2Seq implementation follows these steps:
 2. **Model Architecture**: The Seq2Seq model architecture is implemented according to the paper's specifications. It consists of an encoder and a decoder, both of which can be customized to suit your needs. The encoder typically uses recurrent neural networks (RNNs) such as LSTM or GRU, while the decoder can be a simple RNN or have an attention mechanism.
 
 The example code includes the following model architecture:
+
 ```
-
-
 
 Seq2Seq(
 (encoder): Encoder(
@@ -109,4 +113,71 @@ Here, the encoder and decoder components are instantiated with an embedding laye
 5. **Inference**: After training, you can use the trained Seq2Seq model to generate output sequences for new input data. The implementation provides functionality for both single example and batch inference. The decoder can use various decoding techniques such as greedy decoding or beam search to generate the output sequence.
 
 
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+# Neural Machine Translation by Jointly Learning to Align and Translate
+
+This repository contains an implementation of the Neural Machine Translation (NMT) model presented in the paper "Neural Machine Translation by Jointly Learning to Align and Translate" by Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. The NMT model introduced in this paper revolutionized the field of machine translation by using attention mechanisms to improve translation quality.
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Dependencies](#Dependencies)
+- [Overview](#overview)
+
+## Introduction
+Neural Machine Translation is a subfield of natural language processing that aims to automatically translate text from one language to another using neural networks. The paper "Neural Machine Translation by Jointly Learning to Align and Translate" proposes an attention-based model that allows the NMT system to focus on different parts of the source sentence during translation, improving the quality of translations.
+
+This repository provides an implementation of the NMT model using PyTorch, a popular deep learning framework. The code follows the architecture and training procedures described in the paper, allowing researchers and developers to reproduce the results and further extend the model for their own machine translation tasks.
+
+
+## Dependencies
+To run the code for Neural Machine Translation by Jointly Learning to Align and Translate, you need the following dependencies:
+
+- Python 3.x
+- PyTorch
+- NumPy
+
+
+## Overview
+The implementation of the NMT model follows these steps:
+
+1. **Data Preparation**: The code provides utilities to preprocess the parallel training data for the NMT model. The implementation uses the Multi30k dataset, which is a widely used dataset for machine translation tasks. You can customize this part based on your specific dataset and preprocessing requirements.
+
+2. **Model Architecture**: The NMT model architecture is implemented according to the specifications outlined in the paper. The model consists of an encoder, a decoder, and an attention mechanism. The encoder encodes the source sentence into a fixed-length context vector, and the decoder generates the translated target sentence based on the context vector. The attention mechanism dynamically focuses on different parts of the source sentence during decoding.
+
+The example code includes a sample model architecture with specific dimensions and layers. You can modify the architecture based on your specific requirements.
+
+```
+
+Seq2Seq(
+(encoder): Encoder(
+(embedding): Embedding(vocab_size_encoder, embedding_dim)
+(rnn): GRU(embedding_dim, hidden_size, bidirectional=True)
+(fc): Linear(in_features=1024, out_features=512)
+(dropout): Dropout(p=0.5)
+)
+(decoder): Decoder(
+(attention): Attention(
+(attn): Linear(in_features=1536, out_features=512)
+(v): Linear(in_features=512, out_features=1)
+)
+(embedding): Embedding(vocab_size_decoder, embedding_dim)
+(rnn): GRU(hidden_size, hidden_size)
+(fc_out): Linear(in_features=hidden_size * 2, out_features=vocab_size_decoder)
+(dropout): Dropout(p=0.5)
+)
+)
+```
+
+
+
+3. **Training**: The NMT model is trained using the prepared parallel training data. You can customize the training process based on your specific requirements, such as learning rate, batch size, and number of epochs.
+
+4. **Evaluation**: The implementation includes evaluation metrics to measure the performance of the NMT model. Common metrics such as BLEU score, METEOR, or TER can be used to assess the translation quality. You can customize the evaluation metrics based on your specific task.
+
+5. **Inference**: After training, you can use the trained NMT model to translate new source sentences into target sentences. The implementation provides functions for both single sentence and batch inference. The attention mechanism allows the model to focus on relevant parts of the source sentence during translation.
+
+For more details on how to use the code and customize it for your own machine translation tasks, please refer to the documentation and comments in the source code files.
 
