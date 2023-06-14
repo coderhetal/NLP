@@ -226,6 +226,9 @@ The Transformer implementation follows these steps:
 
 The example code includes the following model architecture:
 
+
+```
+
 Seq2Seq(
   (encoder): Encoder(
     (tok_embedding): Embedding(7853, 256)
@@ -285,6 +288,8 @@ Seq2Seq(
     (dropout): Dropout(p=0.1, inplace=False)
   )
 )
+
+```
 
 
 
