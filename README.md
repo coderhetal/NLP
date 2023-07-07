@@ -1,6 +1,6 @@
 # Table of Contents
 - ## [CBOW implementation](https://github.com/coderhetal/NLP/blob/main/README.md#1-cbow-implementation)
-- ## [Sequence-to-Sequence Learning Using Neural Networks]([https://github.com/coderhetal/NLP/edit/main/README.md#sequence-to-sequence-learning-using-neural-networks-1](https://github.com/coderhetal/NLP#2-sequence-to-sequence-learning-using-neural-networks))
+- ## [Sequence-to-Sequence Learning Using Neural Networks](https://github.com/coderhetal/NLP#2-sequence-to-sequence-learning-using-neural-networks)
 - ## [Neural Machine Translation by Jointly Learning to Align and Translate](https://github.com/coderhetal/NLP#3-neural-machine-translation-by-jointly-learning-to-align-and-translate)
 - ## [ATTENTION IS ALL U NEED](https://github.com/coderhetal/NLP#attention-is-all-you-need-research-paper-implementation)
 
