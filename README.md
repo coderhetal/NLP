@@ -52,7 +52,7 @@ The CBOW implementation follows the following steps:
 7. **Word Embedding Visualization**: The implementation allows you to visualize the word embeddings using PCA. It projects the high-dimensional embeddings onto a 2D space for visualization purposes.
 
 
-
+[top](https://github.com/coderhetal/NLP#table-of-contents)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -119,7 +119,7 @@ Here, the encoder and decoder components are instantiated with an embedding laye
 5. **Inference**: After training, you can use the trained Seq2Seq model to generate output sequences for new input data. The implementation provides functionality for both single example and batch inference. The decoder can use various decoding techniques such as greedy decoding or beam search to generate the output sequence.
 
 
-
+[top](https://github.com/coderhetal/NLP#table-of-contents)
 --------------------------------------------------------------------------------------------------------------------
 
 
@@ -187,6 +187,9 @@ Seq2Seq(
 
 For more details on how to use the code and customize it for your own machine translation tasks, please refer to the documentation and comments in the source code files.
 
+
+
+[top](https://github.com/coderhetal/NLP#table-of-contents)
 -----------------------------------------------------------------------------------------------
 
 
@@ -294,6 +297,9 @@ Seq2Seq(
 
 
 3. **Training**: The code includes functionality to train the Transformer model using the provided dataset. You can modify the training parameters, such as batch size, learning rate, and number of epochs, to optimize the model's performance.
+
+
+[top](https://github.com/coderhetal/NLP#table-of-contents)
 
 4. **Evaluation**: After training, you can evaluate the trained model's performance using appropriate evaluation metrics, such as BLEU score, accuracy, or perplexity. The code includes functions to calculate these metrics.
 
